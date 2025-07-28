@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>𝕯𝖆𝖗𝖐 𝕬𝖓𝖌𝖊𝖑 - Store</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+</head>
+<body onclick="startAudio()">
+  <audio id="bgmusic" loop>
+    <source src="https://files.catbox.moe/5e2ys9.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="notifTransfer">
+    <source src="https://files.catbox.moe/qcuw49.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="overlay text-white flex flex-col items-center justify-start px-4 py-8">
+    <img src="https://files.catbox.moe/cxwlte.jpg" alt="Foto Profil" class="w-28 mb-4 rounded-full shadow-lg" />
+    <h1 class="text-3xl font-bold mb-1">𝕯𝖆𝖗𝖐 𝕬𝖓𝖌𝖊𝖑</h1>
+    <p class="text-lg mb-6">BACA DIBAWAH QRIS</p>
+    <div class="bg-gray-900 bg-opacity-90 p-6 rounded-xl shadow-md w-full max-w-sm text-left">
+      <label class="block mb-2 font-semibold">Pilih Layanan:</label>
+      <select id="produk" class="w-full p-2 rounded bg-gray-800 text-white mb-4">
+        <option value="Jasa Banned WA - 15K">Jasa Banned WA - 15K</option>
+        <option value="Murban - 25K">Murban - 25K</option>
+        <option value="Murbug - 10K">Murbug - 10K</option>
+        <option value="Jasbug - 3K">Jasbug - 3K</option>
+        <option value="Nokos - 5K">Nokos - 5 (tergantung nokosnya) K</option>
+      </select>
+      <label class="block mb-2 font-semibold">Masukkan Nomor WA :</label>
+      <input type="text" id="nomor" class="w-full p-2 rounded bg-gray-800 text-white mb-4" placeholder="Contoh: 08123456789" />
+      <button onclick="kirimData()" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded w-full">
+        Lanjut Bayar
+      </button>
+    </div>
+    <div id="qrisSection" class="mt-8 hidden text-center">
+      <p class="mb-2">Silakan scan QRIS untuk bayar:</p>
+      <img src="https://files.catbox.moe/wp83dr.jpg" alt="QRIS" class="w-64 mx-auto rounded-xl border-4 border-purple-700">
+      <p class="text-sm text-gray-300 mt-2">Setelah melakukan pembayaran lalu anda wajib mengirimkan screenshot bukti pembayaran ke tele @cristianvalta03</p>
+    </div>
+    <button onclick="openTestimoniModal()" class="mt-10 bg-green-600 hover:bg-green-500 px-4 py-2 rounded">
+      OBAT RAGU LO
+    </button>
+    <p class="mt-10 text-xs text-gray-400">© 2025 BY CRISTIANVALTA</p>
+  </div>
+
+  <div id="testimoniModal" class="fixed inset-0 bg-black bg-opacity-75 hidden items-center justify-center z-50">
+    <div class="bg-gray-900 rounded-lg p-4 max-w-md w-full text-center">
+      <h2 class="text-xl font-bold mb-4">Pilih Testimoni</h2>
+      <div class="flex justify-center space-x-3 mb-4">
+        <button onclick="showImage(1)" class="bg-blue-600 px-3 py-2 rounded hover:bg-blue-500">SS 1</button>
+        <button onclick="showImage(2)" class="bg-blue-600 px-3 py-2 rounded hover:bg-blue-500">SS 2</button>
+        <button onclick="showImage(3)" class="bg-blue-600 px-3 py-2 rounded hover:bg-blue-500">SS 3</button>
+      </div>
+      <img id="testimoniImg" src="" alt="Testimoni" class="rounded-lg w-full mb-4 hidden">
+      <button onclick="closeModal()" class="bg-red-600 hover:bg-red-500 px-4 py-2 rounded w-full">Tutup</button>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
